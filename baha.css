@@ -1,0 +1,82 @@
+
+    .top_bar_container{
+        display:flex;
+        align-items:center;
+        flex-direction:row;
+        
+    }
+    #content{
+        background-color:lightgray;
+        height:820px;
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        gap:10px;
+    }
+    #content iframe {
+    width: 100%; /* 寬度填滿父層 div */
+    height: 100%; /* 高度也填滿父層 div */
+   
+    }
+    .anime_name{
+        width:100%;
+        
+        
+        background-color:lightgray;
+    }
+    #logo{
+        display:block;
+    }
+    .search_button{
+         cursor: pointer;
+    }
+    #top_bar_space{
+        margin-right:700px;
+    }
+    .noti_frame{
+        position:relative;
+        margin-bottom:0px;  /*這行沒用 因為前面已經寫過align-items:center 會自動置中*/
+        margin-right:10px;
+    }
+    .noti_icon{
+        border-radius:5px;
+        position:relative;
+    }
+    #noti_number{
+        position:absolute;
+        background-color:red;
+        top:-8px;
+        right:-8px;
+        border-radius:5px;
+        color:white;
+        height:20px;
+        z-index:1;
+    }
+    .noti_text{
+        display:none;
+        
+    }
+     .subscribe_frame{
+        position:relative;
+        margin-bottom:0px;  /*這行沒用 因為前面已經寫過align-items:center 會自動置中*/
+        margin-right:10px;
+    }
+    .subscribe_icon{
+        border-radius:5px;
+        position:relative;
+    }
+     .subscribe_number{
+        position:absolute;
+        background-color:red;
+        top:-8px;
+        right:-8px;
+        border-radius:5px;
+        color:white;
+        height:20px;
+        z-index:1;
+    }
+    @media (max-width:1100px){
+          #top_bar_space{
+                margin-right:500px;
+         }
+    }
+ 

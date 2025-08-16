@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>動畫瘋試作</title>
+  <link rel="stylesheet" href="baha.css"></link>
+ 
+   
+</head>
+<body>
+  <div class="top_bar_container">
+    <div style="margin-right:10px; position:relative ;width:10%">
+         <img id="logo"src="https://i2.bahamut.com.tw/anime/logo.svg" />
+    </div>
+   
+    <form style="width:15%;margin-right:15px" >
+       
+        <input class="anime_name"name="anime_name" type="text" placeholder="請輸入動畫名稱" > </input>
+    </form>
+    <div id="top_bar_space">
+        <img class="search_button" src="https://i2.bahamut.com.tw/anime/search-icon.svg"></img>
+    </div>
+    <div class="noti_frame">
+        <img class="noti_icon" onmouseout = "noti_out(this);"onmouseover ="noti_over(this);"src="https://png.pngtree.com/png-clipart/20190903/original/pngtree-flat-volume-png-image_4419499.jpg" height="25px"/>
+        <div class="noti_text">通知</div>    
+        <span id="noti_number">69</span>
+    </div>
+    <div class="subscribe_frame">
+      <img class="subscribe_icon"onmouseout = "subscribe_out(this);"onmouseover ="subscribe(this);" src="https://img.freepik.com/premium-vector/subscribe-icon-subscribe-button_1194497-408.jpg" height="25px"/>
+      <span class="subscribe_number"> 87</span>
+    </div>
+  </div>
+
+  
+  <hr/>
+  
+    <script src="script_baha.js">
+      
+    </script>
+</body>
+
+</html>
