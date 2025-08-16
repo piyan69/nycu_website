@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>九九乘法表</title>
+  <style>
+    /* 🎯 css 作業目標：加入 css hover 當滑鼠移動到格子的時候改變顏色 */
+    body {
+      font-family: sans-serif;
+      padding: 40px;
+      background-color: #f8f8f8;
+      text-align: center;
+    }
+    table {
+      margin: 0 auto;
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid #aaa;
+      padding: 10px 15px;
+      text-align: center;
+      font-size: 16px;
+    }
+    td:hover{
+        background-color:gray;
+    }
+    th {
+      background-color: #eee;
+      padding: 8px 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>for 迴圈練習：九九乘法表</h1>
+  <table id="multiplicationTable">
+  </table>
+
+  <script>
+   
+    const table = document.getElementById("multiplicationTable");
+
+    // 🎯 javascript 作業目標：
+    // 1. 使用巢狀 for 迴圈產生 9x9 乘法表格，但是範例好像寫錯了！請修正範例
+    // 2. 加入點擊事件, 點擊在格子上時, 使用 alert 顯示格子內容 (text 這個變數)
+
+    for (let i = 1; i <= 9; i++) {
+      const row = document.createElement("tr");
+
+      for (let j = 1; j <= 9; j++) {
+        const cell = document.createElement("td");
+        const text = `${i} × ${j} = ${i * j}`
+        cell.textContent = text;
+        cell.style.color='red';
+       
+        row.appendChild(cell);
+        cell.addEventListener("click",function(){
+              alert(cell.textContent);
+        })
+        // 點擊事件好像是叫做 addEventListener 可以輸入兩個參數的樣子
+        // 第一個我記得是要傳入 string 的 click, 第二個參數好像是要使用 callback function，哎呀範例好像寫錯了！請修正範例
+      }
+
+      table.appendChild(row);
+    }
+  </script>
+
+</body>
+</html>
