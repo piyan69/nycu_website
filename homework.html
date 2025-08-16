@@ -24,6 +24,18 @@
     td:hover{
         background-color:gray;
     }
+    td {
+  transition: transform 0.1s; /* 加上一點過渡效果 */
+  }
+
+  td:active {
+  background-color: purple;
+  color: white;
+  transform: scale(0.5); /* 點下去的時候稍微縮小一點 */
+  }
+
+
+
     th {
       background-color: #eee;
       padding: 8px 12px;
