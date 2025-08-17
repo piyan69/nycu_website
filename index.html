@@ -1,126 +1,146 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <title>九九乘法表</title>
-  <style>
-    /* 🎯 css 作業目標：加入 css hover 當滑鼠移動到格子的時候改變顏色 */
-    header{
-      position:relative;
-      display:flex;
-      justify-content:center;
-    }
-    h1{
-      display:inline;
-      
-    }
-    h1:hover+.multiply_form{
-        display:inline;
-    }
-    .multiply_form{
-        display:none;
-        position:absolute;
-        top:-50px;
-        right:-50px;
-        width:200px;
-        object-fit:cover;
-
-    }
-    
-    body {
-      font-family: sans-serif;
-      padding: 40px;
-      background-color: #f8f8f8;
-      text-align: center;
-    }
-    table {
-      margin: 0 auto;
-      border-collapse: collapse;
-    }
-    td {
-      border: 1px solid #aaa;
-      padding: 10px 15px;
-      text-align: center;
-      font-size: 16px;
-    }
-    td:hover{
-        background-color:gray;
-        position:relative;
-    }
-    td {
-  transition: transform 0.1s ease-out; /* 加上一點過渡效果 */
-  }
-
-  td:active {
-  background-color: purple;
-  color: white;
-  transform: scale(1.5) rotate(45deg); /* 點下去的時候稍微縮小一點 */
-  }
-  td:hover .noob{
-      display:block;
-      color:blue;
-  }
-  .noob{
-      display:none;
-      width:50%;
-      height:50%;
-      opacity:1;
-      position:absolute;
-      top:-25px;
-      z-index:1;
-  }
-
-
-
-    th {
-      background-color: #eee;
-      padding: 8px 12px;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>動畫瘋試作</title>
+  <link rel="stylesheet" href="baha.css"></link>
+ 
+   
 </head>
 <body>
-  <header>
-    <h1>for 迴圈練習：九九乘法表</h1>
-    <img class="multiply_form"src="https://lh3.googleusercontent.com/proxy/EwhkfwTlDrghWRiAbbRCsIOWfJNh15F1lol9QZLNiRNP30Kk1cLM4w3ogyVf-VI9Y9vUVDYYVcKCJyHj">
-  </header>
-  <table id="multiplicationTable">
-  </table>
+  <div class="top_bar_container">
+      <div class="child_container1">
+        <div class="logo_frame">
+            <img id="logo"src="https://i2.bahamut.com.tw/anime/logo.svg" />
+        </div>
+      
+        <form style="width:130px;margin-right:15px" >
+          
+            <input class="anime_name"name="anime_name" type="text" placeholder="請輸入動畫名稱" > </input>
+        </form>
+        <div id="top_bar_space">
+            <img class="search_button" src="https://i2.bahamut.com.tw/anime/search-icon.svg"></img>
+        </div>
+      </div>
+      <div class="child_container2">
+        <div class="noti_frame">
+            <img class="noti_icon" onmouseout = "noti_out(this);"onmouseover ="noti_over(this);"src="https://png.pngtree.com/png-clipart/20190903/original/pngtree-flat-volume-png-image_4419499.jpg" height="25px"/>
+            <div class="noti_text">通知
+              <div class="noti_triangle">
 
-  <script>
-   
-    const table = document.getElementById("multiplicationTable");
+              </div>
+            </div>    
+            <span id="noti_number">69</span>
+        </div>
+        <div class="subscribe_frame">
+          <img class="subscribe_icon"onmouseout = "subscribe_out(this);"onmouseover ="subscribe_over(this);" src="https://img.freepik.com/premium-vector/subscribe-icon-subscribe-button_1194497-408.jpg" height="25px"/>
+          <div class="subscribe_text">訂閱
+              <div class="subscribe_triangle">
+                
+              </div>
+            </div> 
+          <span class="subscribe_number"> 87</span>
+        </div>
+        <div class="set_frame">
+          <img class="set_icon" src="https://avatar2.bahamut.com.tw/avataruserpic/b/2/b20050831/b20050831_s.png?v=1755413968368" height="25px"/>
+          <div class="set_text">設定選單
+              <div class="set_triangle">
+                
+              </div>
+          </div> 
+          <div class="set_menu">
+            <div class="personal_info">
+              <img class="personal_icon" src="https://avatar2.bahamut.com.tw/avataruserpic/b/2/b20050831/b20050831_s.png?v=1755413968368" height="25px"/>
+              <span class="personal_name">Shimizu Ken</span>
+            </div>
+            <hr/>
+            <div class="display_mode_frame">
+              <span class="display_mode_text">顯示模式</span>
+              <div class="display_mode_options">
+                <div class="display_mode_option1">淺色</div>
+                <div class="display_mode_option2">深色</div>
+              </div>
 
-    // 🎯 javascript 作業目標：
-    // 1. 使用巢狀 for 迴圈產生 9x9 乘法表格，但是範例好像寫錯了！請修正範例
-    // 2. 加入點擊事件, 點擊在格子上時, 使用 alert 顯示格子內容 (text 這個變數)
 
-    for (let i = 1; i <= 9; i++) {
-      const row = document.createElement("tr");
+            </div>
 
-      for (let j = 1; j <= 9; j++) {
-        const cell = document.createElement("td");
-        const text = `${i} × ${j} = ${i * j}`
-        cell.textContent = text;
-        cell.style.color='red';
-        cell.style.position='relative';
-        const div_tag = document.createElement("div");
-        div_tag.textContent='noob';
-        div_tag.className='noob';
-        cell.appendChild(div_tag);
+          </div>
+
+        </div>
+        <div class="baha_logo">
+            <a href="https://www.gamer.com.tw/" target="_blank">
+            <img class="baha_icon" src="https://i2.bahamut.com.tw/anime/baha_s.png" height="25px"/>
+            </a>
+            <div class="baha_text">回到巴哈
+              <div class="baha_triangle">
+                
+              </div>
+            </div>  
+            
+          
 
 
-       
-        row.appendChild(cell);
-        cell.addEventListener("click",function(){
-              alert(cell.textContent);
-        })
-        // 點擊事件好像是叫做 addEventListener 可以輸入兩個參數的樣子
-        // 第一個我記得是要傳入 string 的 click, 第二個參數好像是要使用 callback function，哎呀範例好像寫錯了！請修正範例
-      }
+        </div>
+      </div>
+  </div>
 
-      table.appendChild(row);
-    }
-  </script>
+  <hr/>
+  <div class="link_container">
+     <div class="main_page">
+        <a class="main_page_link" href="baha.html" >首頁</a>
+     </div>
+     <div class="genre_page">
+        <a class="genre_page_link" href="baha_genre.html">分類</a>
+     </div>
+  </div>
+  <div class="banner_container">
+         <!-- empty-->
+  </div>
+  <div class="anime_text">
+      我推的動漫
+   </div>
+  <div class="anime_grid_container">
+    
+    <div class="anime_card1"></div>
+    <div class="anime_card2"></div>
+    <div class="anime_card3"></div>
+    <div class="anime_card4"></div>
+    <div class="anime_card5"></div>
+    <div class="anime_card6"></div>
+    <div class="anime_card7"></div>
+    <div class="anime_card8"></div>
+    <div class="anime_card9"></div>
+    <div class="anime_card10"></div>
+    <div class="anime_card11"></div>
+     <div class="anime_card12"></div>
+    <div class="anime_card13"></div>
+    <div class="anime_card14"></div>
+    <div class="anime_card15"></div>
+    <div class="anime_card16"></div>
+    <div class="anime_card17"></div>
+    <div class="anime_card18"></div>
+    <div class="anime_card19"></div>
+    <div class="anime_card20"></div>
+    <div class="anime_card21"></div>
+     <div class="anime_card22"></div>
+     <div class="anime_card23"></div>
+    <div class="anime_card24"></div>
+    <div class="anime_card25"></div>
+    <div class="anime_card26"></div>
+     <div class="anime_card27"></div>
+    <div class="anime_card28"></div>
+    <div class="anime_card29"></div>
+    <div class="anime_card30"></div>
 
+
+
+  </div>
+
+  
+    <script src="script_baha.js">
+      
+    </script>
 </body>
+
 </html>
