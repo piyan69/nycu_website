@@ -62,9 +62,48 @@ display_mode2.addEventListener('click', function() {
 }
 )
 const anime_container = document.querySelector('.anime_grid_container');
+let anime_url=[
+    "https://ani.gamer.com.tw/animeVideo.php?sn=36632",
+    "https://ani.gamer.com.tw/animeVideo.php?sn=44054",
+    "https://ani.gamer.com.tw/animeVideo.php?sn=19849",
+    "https://ani.gamer.com.tw/animeVideo.php?sn=26709",
+    "https://ani.gamer.com.tw/animeVideo.php?sn=43965",
+    "https://ani.gamer.com.tw/animeVideo.php?sn=18626",
+    "https://ani.gamer.com.tw/animeVideo.php?sn=31670",
+    "https://ani.gamer.com.tw/animeVideo.php?sn=20620",
+    "https://anime1.cc/681863497/",
+    "https://ani.gamer.com.tw/animeVideo.php?sn=29213",
+    "https://ani.gamer.com.tw/animeVideo.php?sn=41645",
+    "https://ani.gamer.com.tw/animeVideo.php?sn=40132",
+    "https://anime1.in/2014-wang-xiang-xue-sheng-hui-di-er-ji/",
+    "https://ani.gamer.com.tw/animeVideo.php?sn=27362",
+    "https://ani.gamer.com.tw/animeVideo.php?sn=12016",
+    "https://ani.gamer.com.tw/animeVideo.php?sn=28879",
+    "https://ani.gamer.com.tw/animeVideo.php?sn=34090",
+    "https://tv.apple.com/tw/show/%E5%A4%A9%E5%85%B5%E5%85%AC%E5%9C%92/umc.cmc.2fafy2w7b0fkcnbadq9guk3gc",
+    "https://ani.gamer.com.tw/animeVideo.php?sn=20530",
+    "https://anime1.me/category/2019%E5%B9%B4%E5%A4%8F%E5%AD%A3/%E5%8F%AA%E8%A6%81%E9%95%B7%E5%BE%97%E5%8F%AF%E6%84%9B",
+    "https://ani.gamer.com.tw/animeVideo.php?sn=31622",
+    "https://ani.gamer.com.tw/animeVideo.php?sn=11177",
+    "https://ani.gamer.com.tw/animeVideo.php?sn=38709",
+    "https://ani.gamer.com.tw/animeVideo.php?sn=30021",
+    "https://ani.gamer.com.tw/animeVideo.php?sn=16402",
+    "https://anime1.me/category/2021%e5%b9%b4%e5%86%ac%e5%ad%a3/%e5%9b%9e%e5%be%a9%e8%a1%93%e5%a3%ab%e7%9a%84%e9%87%8d%e5%95%9f%e4%ba%ba%e7%94%9f",
+    "https://ani.gamer.com.tw/animeVideo.php?sn=41686",
+    "https://anime1.me/category/2025%e5%b9%b4%e5%86%ac%e5%ad%a3/sakamoto-days-%e5%9d%82%e6%9c%ac%e6%97%a5%e5%b8%b8",
+    "https://ani.gamer.com.tw/animeVideo.php?sn=32340",
+    "https://ani.gamer.com.tw/animeVideo.php?sn=4451"
+  ];
 for(let i=1;i<=15;i++){
     let anime_card = document.createElement('div');
     anime_card.classList.add('anime_card'+i);
+    anime_card.classList.add('touch_effect');
+    anime_card.style.cursor = "pointer";
+    anime_card.addEventListener('click', function() {
+        alert("這是動畫卡片"+i+"的點擊事件");
+        // 這裡可以添加更多的功能，比如跳轉到動畫詳情頁面
+        window.location.href = anime_url[i-1]; // 假設有一個動畫
+    })
     anime_container.appendChild(anime_card);
 }
 let more_anime = document.createElement('div');
@@ -87,6 +126,14 @@ arrow_down.addEventListener('click', function() {
     for(let i=16;i<=30;i++){
         let anime_card = document.createElement('div');
         anime_card.classList.add('anime_card'+i);
+        anime_card.classList.add('touch_effect');
+        anime_card.style.cursor = "pointer";
+        anime_card.addEventListener('click', function() {
+        alert("這是動畫卡片"+i+"的點擊事件");
+        // 這裡可以添加更多的功能，比如跳轉到動畫詳情頁面
+        window.location.href = anime_url[i-1]; // 假設有一個動畫
+        })
+
         anime_container.appendChild(anime_card);
     }
     
