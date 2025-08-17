@@ -353,6 +353,7 @@
     }
     .anime_grid_container{
         /* height:1600px; */
+        position:relative;
         display:grid;
         gap:30px;
         /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 自動調整列數 */
