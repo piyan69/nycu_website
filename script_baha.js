@@ -55,7 +55,7 @@ display_mode2.addEventListener('click', function() {
   // 確保真的找到了 hr 元素
   if (hr) {
     hr.style.border = 'none'; // 移除邊框
-    hr.style.height = '1px'; // 設定高度
+    hr.style.height = '0px'; // 設定高度
     hr.style.backgroundColor = "#2c2c2c"; // 現在背景色就生效了！
   }
   
@@ -94,9 +94,10 @@ let anime_url=[
     "https://ani.gamer.com.tw/animeVideo.php?sn=32340",
     "https://ani.gamer.com.tw/animeVideo.php?sn=4451"
   ];
-for(let i=1;i<=15;i++){
+for(let i=1;i<=30;i++){
     let anime_card = document.createElement('div');
     anime_card.classList.add('anime_card'+i);
+    anime_card.id ="anime"+i;
     anime_card.classList.add('touch_effect');
     anime_card.style.cursor = "pointer";
     anime_card.addEventListener('click', function() {
@@ -105,6 +106,11 @@ for(let i=1;i<=15;i++){
         window.location.href = anime_url[i-1]; // 假設有一個動畫
     })
     anime_container.appendChild(anime_card);
+}
+for(let i=16;i<=30;i++){
+    const anime_card = document.querySelector('.anime_card'+i);
+    anime_card.style.display = "none"; // 初始隱藏第16到30張卡片
+
 }
 let more_anime = document.createElement('div');
 more_anime.classList.add('more_anime');
@@ -124,19 +130,52 @@ arrow_down.addEventListener('click', function() {
     more_anime.style.display = "none";
     // 這裡添加更多的動畫卡片
     for(let i=16;i<=30;i++){
-        let anime_card = document.createElement('div');
-        anime_card.classList.add('anime_card'+i);
-        anime_card.classList.add('touch_effect');
-        anime_card.style.cursor = "pointer";
-        anime_card.addEventListener('click', function() {
-        alert("這是動畫卡片"+i+"的點擊事件");
-        // 這裡可以添加更多的功能，比如跳轉到動畫詳情頁面
-        window.location.href = anime_url[i-1]; // 假設有一個動畫
-        })
-
-        anime_container.appendChild(anime_card);
+      const anime_card = document.querySelector('.anime_card'+i); 
+      anime_card.style.display = "block"; // 初始隱藏第16到30張卡片
     }
     
 })
+// 搜尋功能
+const search_input = document.querySelector('.anime_name');
+if(!search_input){
+  console.error("搜尋輸入框未找到");
+}
+else{
+  console.log("搜尋輸入框已找到");
+
+  search_input.addEventListener('input', function(){
+    const input = search_input.value.toLowerCase();
+    if(input === ""){
+       console.log("輸入框為空，請輸入動畫名稱");
+    }
+    else if(input === undefined){
+       console.error("輸入框值為 undefined，請檢查輸入框");
+    }
+    else{
+        console.log("輸入的動畫名稱為: " + input);
+        const anime_cards = document.querySelectorAll('.anime_grid_container > div');
+    
+        anime_cards.forEach(function(card){
+            if( card.id.toLowerCase()== input  ){
+                let text = card.id.toLowerCase();
+                console.log(text);
+                console.log("找到匹配的動畫卡片: " + card.id);
+                const numberString = text.replace(/\D/g, ''); // 結果會是字串 "1"
+
+                // 因為結果是字串，通常需要轉換成數字
+                const number = parseInt(numberString, 10);    //10是10進位的意思         
+                console.log(number);       // 輸出: 1   (數字類型)
+                
+                window.location.href = anime_url[number-1]; // 假設有一個動畫
 
 
+
+
+            }
+        
+
+        })
+    }
+    
+  })
+}
