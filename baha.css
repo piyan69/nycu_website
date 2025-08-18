@@ -9,6 +9,7 @@
         display:grid;
         grid-template-columns: 4fr 1fr;
         align-items:center;
+       
         
        
         
@@ -353,7 +354,7 @@
         border:0;
         height:1px;
         background-color:gray;
-        margin:5px;
+        margin:0px;
     }
     .banner_container{
         background-image:url("https://d89889xojlqhy.cloudfront.net/upload/featured/52e29315cf138fe63857e0646b12fe9a.png");
@@ -607,6 +608,11 @@
          transform: scale(0.95); /* 3. 當按下時，縮小5%*/
     }
        
+
+
+
+    
+     
     @media (max-width:1000px){
        .anime_grid_container{
        
