@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>動畫瘋試作</title>
+  <title data-translate="site_title">動畫瘋試作</title>
   <link rel="stylesheet" href="baha.css"></link>
  
    
@@ -15,18 +15,25 @@
             <img id="logo"src="https://i2.bahamut.com.tw/anime/logo.svg" />
         </div>
       
-        <form style="width:200px;margin-right:15px" >
-            <input class="anime_name"name="anime_name" type="text" placeholder="請輸入動畫名稱" > </input>
+        <form style="width:250px;margin-right:20px" >
+            <input  data-translate="search_placeholder"class="anime_name"name="anime_name" type="text" placeholder="請輸入動畫名稱"autocomplete="off" > </input>
             <button class="search_button" type="submit">
                 <img src="https://i2.bahamut.com.tw/anime/search-icon.svg" height="25px"></img>
             </button>
         </form>
+        <select class="lang_selector">
+            <option  data-translate="lang_placeholder" value="">please choose a language</option>
+            <option data-translate="lang_option_zh" value="zh-Hant">traditional chinese</option>
+            <option data-translate="lang_option_en" value="en">english</option>
+            <option data-translate="lang_option_ja" value="ja">japanese</option>
+        </select>
+
        
       </div>
       <div class="child_container2">
         <div class="noti_frame">
             <img class="noti_icon" onmouseout = "noti_out(this);"onmouseover ="noti_over(this);"src="https://png.pngtree.com/png-clipart/20190903/original/pngtree-flat-volume-png-image_4419499.jpg" height="25px"/>
-            <div class="noti_text">通知
+            <div data-translate="noti_text"class="noti_text">通知
               <div class="noti_triangle">
 
               </div>
@@ -35,7 +42,7 @@
         </div>
         <div class="subscribe_frame">
           <img class="subscribe_icon"onmouseout = "subscribe_out(this);"onmouseover ="subscribe_over(this);" src="https://img.freepik.com/premium-vector/subscribe-icon-subscribe-button_1194497-408.jpg" height="25px"/>
-          <div class="subscribe_text">訂閱
+          <div data-translate="subscribe_text"class="subscribe_text">訂閱
               <div class="subscribe_triangle">
                 
               </div>
@@ -44,7 +51,7 @@
         </div>
         <div class="set_frame">
           <img class="set_icon" src="https://avatar2.bahamut.com.tw/avataruserpic/b/2/b20050831/b20050831_s.png?v=1755413968368" height="25px"/>
-          <div class="set_text">設定選單
+          <div data-translate="settings_menu" class="set_text">設定選單
               <div class="set_triangle">
                 
               </div>
@@ -56,10 +63,10 @@
             </div>
             <hr/>
             <div class="display_mode_frame">
-              <span class="display_mode_text">顯示模式</span>
+              <span data-translate="display_mode"class="display_mode_text">顯示模式</span>
               <div class="display_mode_options">
-                <div class="display_mode_option1">淺色</div>
-                <div class="display_mode_option2">深色</div>
+                <div data-translate="light_mode"class="display_mode_option1">淺色</div>
+                <div data-translate="dark_mode" class="display_mode_option2">深色</div>
               </div>
 
 
@@ -72,7 +79,7 @@
             <a href="https://www.gamer.com.tw/" target="_blank">
             <img class="baha_icon" src="https://i2.bahamut.com.tw/anime/baha_s.png" height="25px"/>
             </a>
-            <div class="baha_text">回到巴哈
+            <div data-translate="back_to_baha" class="baha_text">回到巴哈
               <div class="baha_triangle">
                 
               </div>
@@ -88,16 +95,16 @@
   <hr/>
   <div class="link_container">
      <div class="main_page">
-        <a class="main_page_link" href="baha.html" >首頁</a>
+        <a data-translate="nav_home"class="main_page_link" href="./" >首頁</a>
      </div>
      <div class="genre_page">
-        <a class="genre_page_link" href="baha_genre.html">分類</a>
+        <a data-translate="nav_category" class="genre_page_link" href="baha_genre.html">分類</a>
      </div>
   </div>
   <div class="banner_container">
          <!-- empty-->
   </div>
-  <div class="anime_text">
+  <div data-translate="recommendation" class="anime_text">
       我推的動漫
    </div>
   <div class="anime_grid_container">
