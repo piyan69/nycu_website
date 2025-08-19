@@ -143,7 +143,7 @@ if(!search_input){
 else{
   console.log("搜尋輸入框已找到");
 
-  search_input.addEventListener('input', function(){
+  search_input.addEventListener('change', function(){   //change 事件在輸入框失去焦點時觸發 input 事件在輸入框內容改變時觸發
     const input = search_input.value.toLowerCase();
     if(input === ""){
        console.log("輸入框為空，請輸入動畫名稱");
@@ -179,3 +179,37 @@ else{
     
   })
 }
+async function changeLanguage(lang){
+   const non_json_response= await fetch(`./translations/${lang}.json`);
+   const json_response = await non_json_response.json();
+   const global_elements = document.querySelectorAll('[data-translate]');
+   global_elements.forEach(element =>{
+      const key = element.getAttribute('data-translate');
+      const data = json_response[key];
+      if(data){
+        if(element.tagName ==='INPUT' && element.placeholder){
+          element.placeholder = data;
+        }
+        else{
+          element.textContent = data; // 更新元素的文字內容
+        }
+
+      }
+      else{
+        console.error(`找不到鍵值 ${key} 的翻譯`);
+      }
+
+   })
+
+
+}
+// 語言切換功能
+const lang_selector = document.querySelector('.lang_selector');
+lang_selector.addEventListener("change",function(){
+  const selected_lang = lang_selector.value;
+  console.log("選擇的語言是: " + selected_lang);
+  changeLanguage(selected_lang);
+
+
+
+})
