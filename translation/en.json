@@ -1,0 +1,18 @@
+{
+  "site_title": "Ani-Gamer Clone",
+  "search_placeholder": "Enter anime name...",
+  "lang_option_placeholder": "Please choose a language",
+  "lang_option_zh": "Traditional Chinese",
+  "lang_option_en": "English",
+  "lang_option_ja": "Japanese",
+  "noti_text": "Notifications",
+  "subscribe_text": "Subscriptions",
+  "settings_menu": "Settings",
+  "display_mode": "Display Mode",
+  "light_mode": "Light",
+  "dark_mode": "Dark",
+  "back_to_baha": "Back to Bahamut",
+  "nav_home": "Home",
+  "nav_category": "Categories",
+  "recommendation": "My Favorite Anime"
+}

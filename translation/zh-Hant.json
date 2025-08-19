@@ -1,0 +1,18 @@
+{
+  "site_title": "動畫瘋試作",
+  "search_placeholder": "請輸入動畫名稱",
+  "lang_option_placeholder": "請選擇語言",
+  "lang_option_zh": "繁體中文",
+  "lang_option_en": "英文",
+  "lang_option_ja": "日文",
+  "noti_text": "通知",
+  "subscribe_text": "訂閱",
+  "settings_menu": "設定選單",
+  "display_mode": "顯示模式",
+  "light_mode": "淺色",
+  "dark_mode": "深色",
+  "back_to_baha": "回到巴哈",
+  "nav_home": "首頁",
+  "nav_category": "分類",
+  "recommendation": "我推的動漫"
+}

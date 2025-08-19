@@ -1,0 +1,18 @@
+{
+  "site_title": "アニメウェブサイト試作",
+  "search_placeholder": "アニメ名を入力してください",
+  "lang_option_placeholder": "言語を選択してください",
+  "lang_option_zh": "繁体字中国語",
+  "lang_option_en": "英語",
+  "lang_option_ja": "日本語",
+  "noti_text": "通知",
+  "subscribe_text": "登録チャンネル",
+  "settings_menu": "設定メニュー",
+  "display_mode": "表示モード",
+  "light_mode": "ライト",
+  "dark_mode": "ダーク",
+  "back_to_baha": "バハムートに戻る",
+  "nav_home": "ホームページ",
+  "nav_category": "分類",
+  "recommendation": "私のおすすめアニメ"
+}
